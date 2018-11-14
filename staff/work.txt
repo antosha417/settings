@@ -1,0 +1,7 @@
+# сделать нового пользователя
+curl -d "app_version=870&email=testqwerty@ivi.ru&password=qwerty" api.akovalkov.notkube.dev.ivi.ru/mobileapi/user/register/v5/ && echo
+{"result": {"session": "6e732dac2_1546516505-2kbOZw6vBY1gxzHkI224l-Q"}}
+
+# активировать сертификат
+curl -d 'app_version=870&session=d2db00c55_1546527740-4EsEGOPuNTOUgMDObB3EV7A&key=e2b3ca4fdafa' http://mobile.akovalkov.notkube.dev.ivi.ru/billing/v1/certificate/activate
+
