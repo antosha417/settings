@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 font pango:monospace 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -152,7 +152,7 @@ exec "xrandr --output eDP-1 --off"
 bindsym $mod+Shift+s exec "xrandr --output eDP-1 --auto"; restart
 
 # Alt + l to lock
-bindsym mod4+l exec setxkbmap us; exec i3lock-fancy -g
+bindsym mod1+l exec setxkbmap us; exec i3lock-fancy -g
 exec xautolock -time 3 -locker 'setxkbmap us; i3lock-fancy -g'
 
 bindsym $mod+n exec nautilus
