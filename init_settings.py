@@ -8,7 +8,7 @@ ENV_ARGS = {
 DELIMITER = '_!_'
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-f', '--force', action='store_true')
+parser.add_argument('-f', '--force', help='Overrides existing files', action='store_true')
 
 args = parser.parse_args()
 
@@ -27,5 +27,10 @@ for dir_name in os.listdir(path='.'):
                 except OSError as e:
                     if e.errno != errno.ENOENT:
                         raise
-
-            os.symlink(os.path.abspath(os.path.join(dir_name, file_name)), settings_file_name)
+            try:
+                os.symlink(os.path.abspath(os.path.join(dir_name, file_name)), settings_file_name)
+            except OSError as e:
+                if e.errno == errno.ENOENT:
+                    print(e)
+                else:
+                    raise
