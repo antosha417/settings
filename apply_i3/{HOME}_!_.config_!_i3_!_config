@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 font pango:monospace 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -175,6 +175,8 @@ assign [class="Thunderbird"] 		$WSsosial
 
 exec_always --no-startup-id feh --bg-fill ~/Dropbox/wall.png
 exec --no-startup-id dropbox start
-exec xinput set-prop 11 278 1 # Thinkpad t470 tap to click
+
+# Thinkpad t470 tap to click
+exec xinput set-prop 11 278 1
 
 # exec --no-startup-id compton --config ~/.config/compton.conf -b
