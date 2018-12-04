@@ -148,16 +148,15 @@ bar {
 exec_always setxkbmap -layout us,ru
 exec_always setxkbmap -option 'grp:alt_space_toggle'
 
-exec "xrandr --output eDP-1 --off"
-bindsym $mod+Shift+s exec "xrandr --output eDP-1 --auto"; restart
+exec "xrandr --output eDP1 --off"
+bindsym $mod+Shift+s exec "xrandr --output eDP1 --auto"; restart
 
 # Alt + l to lock
 bindsym mod1+l exec setxkbmap us; exec i3lock-fancy -g
 exec xautolock -time 3 -locker 'setxkbmap us; i3lock-fancy -g'
 
 bindsym $mod+n exec nautilus
-bindsym $mod+i workspace $WScode
-bindsym $mod+Shift+i workspace $WScode; exec bash ~/snap/idea/bin/idea.sh
+bindsym $mod+i workspace $WScode; exec bash ~/snap/idea/bin/idea.sh
 
 bindsym $mod+u workspace $WSweb; exec google-chrome
 
