@@ -1,0 +1,16 @@
+
+set $laptop_screen eDP1
+set $external_monitor DP1-1
+
+exec --no-startup-id xrandr --output $external_monitor  --pos 1920x1080 --output $laptop_screen --pos 0x0 --primary
+
+# assign workspaces to monitors
+workspace $WScode   output $laptop_screen
+workspace $WSterm   output $laptop_screen
+workspace $WSweb    output $laptop_screen
+workspace $WSsosial output $laptop_screen
+
+# Thinkpad t470 tap to click
+# `xinput list` to find the name of device ("SynPS/2 Synaptics TouchPad")
+# `xinput list-props "SynPS/2 Synaptics TouchPad"` to find prop name ("libinput Tapping Enabled")
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1

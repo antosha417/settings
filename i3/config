@@ -1,0 +1,191 @@
+# i3 configuration file-
+set $mod Mod4
+
+font pango:monospace 11
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return workspace $WSterm exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu (a program launcher)
+#bindsym $mod+j exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bar {
+    strip_workspace_numbers yes
+    status_command i3blocks
+	position top
+	font xft:Droid Sans Mono, FontAwesome 11
+}
+
+
+# bindings to launch apps
+# WScode
+bindsym $mod+i workspace $WScode; exec bash ~/snap/idea/bin/idea.sh
+
+# WSweb
+bindsym $mod+u workspace $WSweb; exec google-chrome
+
+# WSsosial
+bindsym $mod+s workspace $WSsosial; exec slack
+bindsym $mod+v workspace $WSsosial; exec vk
+bindsym $mod+m workspace $WSsosial exec thunderbird
+
+# Any workspace
+bindsym $mod+b exec nautilus
+bindsym --release Print exec --no-startup-id import /home/akovalkov/Pictures/latest-screenshot.png
+
+# Auto start
+exec_always --no-startup-id feh --bg-fill ~/settings/wall.jpg
+exec --no-startup-id dropbox start
+# $mod + space to change language
+set $xkblayout ~/settings/i3/scripts/xkblayout-state
+bindsym $mod+space exec $xkblayout set +1; exec pkill -RTMIN+1 i3blocks
+exec --no-startup-id setxkbmap -v 10 -layout "us,ru" -variant "dvp,dvp" -option compose:102 -option numpad:shift3 -option kpdl:semi -option keypad:atm -option caps:shift
+
+# Alt + l to lock
+bindsym mod1+l exec $xkblayout set 0; exec i3lock-fancy -g;
+exec_always xautolock -time 8 -locker '~/settings/i3/scripts/xkblayout-state set 0; i3lock-fancy -g'
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in vertical orientation
+bindsym $mod+Shift+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Ctrl+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+Shift+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+# Name the workspaces
+set $WScode     "1:"
+set $WSterm     "2:"
+set $WSweb      "3:"
+set $WSsosial   "4:"
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# switch to workspace
+bindsym $mod+ampersand workspace $WScode; exec xdotool mousemove 960 540 click 1
+bindsym $mod+bracketleft workspace $WSterm
+bindsym $mod+braceleft workspace $WSweb
+bindsym $mod+braceright workspace $WSsosial; layout tabbed
+bindsym $mod+parenleft workspace 5
+bindsym $mod+equal workspace 6
+bindsym $mod+asterisk workspace 7
+bindsym $mod+parenright workspace 8
+bindsym $mod+plus workspace 9
+bindsym $mod+bracketright workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+precent move container to workspace $WScode
+bindsym $mod+Shift+7 move container to workspace $WSterm
+bindsym $mod+Shift+5 move container to workspace $WSweb
+bindsym $mod+Shift+3 move container to workspace $WSsosial
+bindsym $mod+Shift+1 move container to workspace 5
+bindsym $mod+Shift+9 move container to workspace 6
+bindsym $mod+Shift+0 move container to workspace 7
+bindsym $mod+Shift+2 move container to workspace 8
+bindsym $mod+Shift+4 move container to workspace 9
+bindsym $mod+Shift+6 move container to workspace 10
+
+# assign apps to workspaces
+assign [class="jetbrains-idea"]     $WScode
+assign [class="Gnome-terminal"]		$WSterm
+assign [class="Google-chrome"] 		$WSweb
+assign [class="VK"] 			    $WSsosial
+assign [class="Slack"] 			    $WSsosial
+assign [class="Thunderbird"] 		$WSsosial
+
+
+set $laptop_screen eDP1
+set $external_monitor DP1-1
+
+exec --no-startup-id xrandr --output $external_monitor  --pos 1920x1080 --output $laptop_screen --pos 0x0 --primary
+
+# assign workspaces to monitors
+workspace $WScode   output $laptop_screen
+workspace $WSterm   output $laptop_screen
+workspace $WSweb    output $laptop_screen
+workspace $WSsosial output $laptop_screen
+
+# Thinkpad t470 tap to click
+# `xinput list` to find the name of device ("SynPS/2 Synaptics TouchPad")
+# `xinput list-props "SynPS/2 Synaptics TouchPad"` to find prop name ("libinput Tapping Enabled")
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1

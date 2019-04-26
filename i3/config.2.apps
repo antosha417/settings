@@ -1,0 +1,19 @@
+# bindings to launch apps
+# WScode
+bindsym $mod+i workspace $WScode; exec bash ~/snap/idea/bin/idea.sh
+
+# WSweb
+bindsym $mod+u workspace $WSweb; exec google-chrome
+
+# WSsosial
+bindsym $mod+s workspace $WSsosial; exec slack
+bindsym $mod+v workspace $WSsosial; exec vk
+bindsym $mod+m workspace $WSsosial exec thunderbird
+
+# Any workspace
+bindsym $mod+b exec nautilus
+bindsym --release Print exec --no-startup-id import /home/akovalkov/Pictures/latest-screenshot.png
+
+# Auto start
+exec_always --no-startup-id feh --bg-fill ~/settings/wall.jpg
+exec --no-startup-id dropbox start

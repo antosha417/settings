@@ -1,0 +1,14 @@
+set $laptop_screen eDP-1
+set $left_screen HDMI-1
+set $right_screen DP-1
+
+exec xrandr --output $left_screen --pos 0x0 --output $right_screen --pos 1920x1080 --output $laptop_screen --off
+
+# assign workspaces to monitors
+workspace $WScode   output $left_screen
+workspace $WSterm   output $left_screen
+workspace $WSweb    output $right_screen
+workspace $WSsosial output $right_screen
+
+#Turn off middle mouse on Thinkpad Bluetuth keyboard 
+exec xinput set-button-map $(xinput --list |grep -o 'ThinkPad Compact Bluetooth Keyboard .* pointer'| grep -o '[0-9]*') 1 0 3

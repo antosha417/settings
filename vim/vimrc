@@ -1,0 +1,7 @@
+set relativenumber
+set showcmd         " Show command thats being typen
+set autoindent
+
+set expandtab       " Expand TABs to spaces
+set tabstop=4       " Show TAB as 4 spaces
+set shiftwidth=4    " When indenting with '>', insert 4 spaces
