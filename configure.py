@@ -58,10 +58,7 @@ class DefaultSettings:
         self.apps = [
             App('git'),
             App('curl'),
-            App('zsh', 
-                'zsh/zshrc', 
-                '{HOME}/.zshrc',
-                commands=['sh zsh/oh-my-zsh.sh']),
+            App('zsh', 'zsh/zshrc', '{HOME}/.zshrc')
             App('i3', 'i3/config', '{HOME}/.config/i3/config'),
             App('i3blocks', 'i3/i3blocks.conf', '{HOME}/.i3blocks.conf'),
             App('ideavim', 'idea/ideavimrc', '{HOME}/.ideavimrc', installable=False),
