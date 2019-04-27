@@ -76,6 +76,7 @@ class DefaultSettings:
             App('xautolock'),
             App('i3lock-fancy'),
             App('fonts-font-awesome'),
+            App('feh'),
         ]
 
     def install_apps(self):
