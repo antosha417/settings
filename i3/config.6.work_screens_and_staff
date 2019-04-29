@@ -1,8 +1,7 @@
-set $laptop_screen eDP-1
-set $left_screen HDMI-1
-set $right_screen DP-1
+set $left_screen VGA-1
+set $right_screen HDMI-1
 
-exec xrandr --output $left_screen --pos 0x0 --output $right_screen --pos 1920x1080 --output $laptop_screen --off
+exec xrandr --output $left_screen --pos 0x0 --output $right_screen --pos 1920x1080
 
 # assign workspaces to monitors
 workspace $WScode   output $left_screen

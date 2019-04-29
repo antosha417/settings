@@ -22,7 +22,7 @@ bindsym $mod+plus workspace 9
 bindsym $mod+bracketright workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+precent move container to workspace $WScode
+bindsym $mod+Shift+percent move container to workspace $WScode
 bindsym $mod+Shift+7 move container to workspace $WSterm
 bindsym $mod+Shift+5 move container to workspace $WSweb
 bindsym $mod+Shift+3 move container to workspace $WSsosial
