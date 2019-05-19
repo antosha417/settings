@@ -172,6 +172,7 @@ assign [class="jetbrains-idea"]     $WScode
 assign [class="Gnome-terminal"]		$WSterm
 assign [class="Google-chrome"] 		$WSweb
 assign [class="VK"] 			    $WSsosial
+assign [class="Skype"]              $WSsosial
 assign [class="Slack"] 			    $WSsosial
 assign [class="Thunderbird"] 		$WSsosial
 
