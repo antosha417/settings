@@ -17,5 +17,4 @@ bindsym --release Print exec --no-startup-id import /home/akovalkov/Pictures/lat
 # Auto start
 exec_always --no-startup-id feh --bg-fill ~/settings/wall.jpg
 exec --no-startup-id dropbox start
-exec --no-startup-id skypeforlinux
 
