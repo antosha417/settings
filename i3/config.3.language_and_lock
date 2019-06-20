@@ -1,7 +1,7 @@
 # $mod + space to change language
 set $xkblayout ~/settings/i3/scripts/xkblayout-state
 bindsym $mod+space exec $xkblayout set +1; exec pkill -RTMIN+1 i3blocks
-exec --no-startup-id setxkbmap -v 10 -layout "us,ru" -variant "dvp,dvp" -option compose:102 -option numpad:shift3 -option kpdl:semi -option keypad:atm -option caps:shift
+exec --no-startup-id setxkbmap -v 10 -layout "us,ru"
 
 # Alt + l to lock
 bindsym mod1+l exec $xkblayout set 0; exec i3lock-fancy -g;

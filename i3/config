@@ -132,6 +132,50 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+# Name the workspaces
+set $WScode     "1:"
+set $WSterm     "2:"
+set $WSweb      "3:"
+set $WSsosial   "4:"
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# switch to workspace
+bindsym $mod+1 workspace $WScode; exec xdotool mousemove 960 540 click 1
+bindsym $mod+2 workspace $WSterm
+bindsym $mod+3 workspace $WSweb
+bindsym $mod+4 workspace $WSsosial; layout tabbed
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $WScode
+bindsym $mod+Shift+2 move container to workspace $WSterm
+bindsym $mod+Shift+3 move container to workspace $WSweb
+bindsym $mod+Shift+4 move container to workspace $WSsosial
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# assign apps to workspaces
+assign [class="jetbrains-idea"]     $WScode
+assign [class="Gnome-terminal"]		$WSterm
+assign [class="Google-chrome"] 		$WSweb
+assign [class="VK"] 			    $WSsosial
+assign [class="Skype"]              $WSsosial
+assign [class="Slack"] 			    $WSsosial
+assign [class="Thunderbird"] 		$WSsosial
+
 
 set $laptop_screen eDP1
 set $external_monitor DP1-1
