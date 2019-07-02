@@ -104,5 +104,5 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 PROMPT=" %{$fg_bold[green]%}%m%{$reset_color%} ${PROMPT}"
 
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:~/.cabal/bin:~/.ghcup/bin:~/.local/bin
 
