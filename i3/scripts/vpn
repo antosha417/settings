@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#------------------------------------------------------------------------
+
+if nmcli con show --active | grep -q vpn; then
+    echo 
+    echo 
+    echo '#FFFFFF'
+else
+    connection=nmcli con up vpn
+    echo 
+    echo 
+    echo "#FF0000"
+fi
+
+#------------------------------------------------------------------------
+
