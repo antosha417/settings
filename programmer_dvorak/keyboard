@@ -1,5 +1,0 @@
-XKBLAYOUT="us"
-XKBVARIANT="dvp"
-BACKSPACE="guess"
-XKBMODEL="pc105"
-XKBOPTIONS="compose:102,numpad:shift3,kpdl:semi,keypad:atm,caps:shift"
