@@ -12,7 +12,7 @@ bindsym $mod+m workspace $WSsosial exec thunderbird
 
 # Any workspace
 bindsym $mod+b exec nautilus
-bindsym --release Print exec --no-startup-id import /home/akovalkov/Pictures/latest-screenshot.png
+bindsym --release Print exec --no-startup-id scrot -s ~/Pictures/latest_screenshot.png
 
 # Auto start
 exec_always --no-startup-id feh --bg-fill ~/settings/wall.jpg
