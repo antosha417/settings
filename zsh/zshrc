@@ -107,4 +107,5 @@ PROMPT=" %{$fg_bold[green]%}%m%{$reset_color%} ${PROMPT}"
 export PATH=$PATH:/usr/local/go/bin:~/.cabal/bin:~/.ghcup/bin:~/.local/bin
 
 alias dvorak='setxkbmap -v 10 -layout "us,ru" -variant "dvp,"'
-
+alias qwerty='setxkbmap -v 10 -layout "us,ru" -variant ","'
+ 
