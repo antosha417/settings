@@ -2,15 +2,10 @@
 
 #------------------------------------------------------------------------
 
-if nmcli con show --active | grep -q vpn; then
-    echo 
-    echo 
+if nmcli con show --active | grep -q ethernet; then
+    echo 
+    echo 
     echo '#FFFFFF'
-else
-    nmcli con up vpn  > /dev/null 2>&1
-    echo 
-    echo 
-    echo "#FF0000"
 fi
 
 #------------------------------------------------------------------------
