@@ -1,2 +1,5 @@
 set cursorline
 set showmode
+set incsearch
+set relativenumber
+set number
