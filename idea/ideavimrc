@@ -1,5 +1,21 @@
 set cursorline
 set showmode
 set incsearch
+
+" Turn off error sound
+set visualbell
+set noerrorbells
+
+" Show line numbers
 set relativenumber
 set number
+
+" KJump plugin settings
+let mapleader=" "
+nmap <leader>w :action KJumpAction.Word1<CR>
+nmap <leader>c :action KJumpAction.Char2<CR>
+nmap <leader>l :action KJumpAction.Line<CR>
+
+" Jumps Back and Forward
+nnoremap <leader>j :action Back<CR>
+nnoremap <leader>k :action Forward<CR>
