@@ -1,6 +1,8 @@
 set cursorline
 set showmode
 set incsearch
+set surround
+set ignorecase
 
 " Turn off error sound
 set visualbell
@@ -12,9 +14,11 @@ set number
 
 " KJump plugin settings
 let mapleader=" "
-nmap <leader>w :action KJumpAction.Word1<CR>
-nmap <leader>c :action KJumpAction.Char2<CR>
+nmap <leader>c :action KJumpAction<CR>
+nmap <leader>w :action KJumpAction.Word0<CR>
 nmap <leader>l :action KJumpAction.Line<CR>
+nmap <leader>s :action KJumpAction.Word1<CR>
+" nmap <leader>a :action KJumpAction.Char2<CR>
 
 " Jumps Back and Forward
 nnoremap <leader>j :action Back<CR>
