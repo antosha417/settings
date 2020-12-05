@@ -1,8 +1,8 @@
 set cursorline
 set showmode
 set incsearch
-set surround
 set ignorecase
+set surround
 
 " Turn off error sound
 set visualbell
@@ -12,14 +12,22 @@ set noerrorbells
 set relativenumber
 set number
 
-" KJump plugin settings
 let mapleader=" "
+
+" KJump plugin settings
 nmap <leader>c :action KJumpAction<CR>
-nmap <leader>w :action KJumpAction.Word0<CR>
+nmap <leader>w :action KJumpAction.Word1<CR>
 nmap <leader>l :action KJumpAction.Line<CR>
 nmap <leader>s :action KJumpAction.Word1<CR>
-" nmap <leader>a :action KJumpAction.Char2<CR>
 
-" Jumps Back and Forward
+" Back and Forward Jumps
 nnoremap <leader>j :action Back<CR>
 nnoremap <leader>k :action Forward<CR>
+
+nmap <leader>a :action GotoAction<CR>
+nmap <leader>n :action GotoClass<CR>
+nmap <leader>o :action SelectInProjectView<CR>
+nmap <leader>b :action Git.Branches<CR>
+nmap <leader>e :action RecentFiles<CR>
+nmap <leader>h :action HideAllWindows<CR>
+nmap <leader>i :action GotoImplementation<CR>
